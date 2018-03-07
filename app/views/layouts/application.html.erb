@@ -7,8 +7,14 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
+  <header>
+    <h2><%= link_to 'Shopping Cart', root_path %></h2>
+    <p><%= link_to 'Cart', :controller => 'cart' %></p>
+  </header>
   <body>
     <%= yield %>
   </body>
+  <footer>
+    <p>Copyright &copy; copy</p>
+  </footer>
 </html>
