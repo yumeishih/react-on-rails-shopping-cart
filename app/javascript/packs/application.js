@@ -9,8 +9,8 @@
 
 console.log('Hello World from Webpacker')
 import ReactOnRails from 'react-on-rails';
-import Cart from '../bundles/components/Cart/cart';
-import Content from '../bundles/components/ItemsList/content';
+import Cart from '../bundles/components/Cart/cartEntryPoint';
+import Content from '../bundles/components/ItemsList/contentEntryPoint';
 
 
 // This is how react_on_rails can see the HelloWorld in the browser.

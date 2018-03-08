@@ -10,7 +10,7 @@ export default class Cart extends Component {
     this.state = {
       total: 0
     };
-    //props.fetchCart();
+    props.fetchCart();
   }
 
   componentWillReceiveProps(nextProps) {
@@ -22,6 +22,7 @@ export default class Cart extends Component {
   }
 
   render() {
+    console.log("Cart")
     const { deleteCart, updateCart } = this.props;
     return (
       <div className="cart">
