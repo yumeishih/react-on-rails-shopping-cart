@@ -8,3 +8,13 @@
 // layout file, like app/views/layouts/application.html.erb
 
 console.log('Hello World from Webpacker')
+import ReactOnRails from 'react-on-rails';
+//import Cart from '../bundles/components/Cart/cart';
+import Content from '../bundles/components/ItemsList/content';
+
+
+// This is how react_on_rails can see the HelloWorld in the browser.
+ReactOnRails.register({
+  //Cart,
+  Content
+});

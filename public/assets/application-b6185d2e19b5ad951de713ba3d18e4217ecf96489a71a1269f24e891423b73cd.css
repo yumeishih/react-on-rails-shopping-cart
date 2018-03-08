@@ -1,0 +1,139 @@
+/* line 12, /Users/yumei.shih/Desktop/Practice/RoR/react-rails-shopping-cart/app/assets/stylesheets/items_list.scss */
+.content {
+  padding: 10% 0% 5% 0%;
+  background: #EEEEEE;
+}
+
+/* line 16, /Users/yumei.shih/Desktop/Practice/RoR/react-rails-shopping-cart/app/assets/stylesheets/items_list.scss */
+.itemList {
+  display: inline-flex;
+  flex: 1 0 auto;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  padding: 0% 5% 0% 5%;
+  justify-content: space-around;
+  background: #EEEEEE;
+  text-align: center;
+}
+
+/* line 27, /Users/yumei.shih/Desktop/Practice/RoR/react-rails-shopping-cart/app/assets/stylesheets/items_list.scss */
+.item {
+  margin: 8px;
+  float: left;
+  width: 280px;
+}
+/* line 31, /Users/yumei.shih/Desktop/Practice/RoR/react-rails-shopping-cart/app/assets/stylesheets/items_list.scss */
+.item img {
+  width: 100%;
+  height: auto;
+}
+/* line 35, /Users/yumei.shih/Desktop/Practice/RoR/react-rails-shopping-cart/app/assets/stylesheets/items_list.scss */
+.item .iteminfo {
+  background: #F1F8E9;
+  padding: 15px;
+  text-align: center;
+}
+/* line 40, /Users/yumei.shih/Desktop/Practice/RoR/react-rails-shopping-cart/app/assets/stylesheets/items_list.scss */
+.item .addToCart {
+  margin: 5px;
+}
+/* line 43, /Users/yumei.shih/Desktop/Practice/RoR/react-rails-shopping-cart/app/assets/stylesheets/items_list.scss */
+.item:hover {
+  border: 1px solid #DCEDC8;
+}
+
+/* line 49, /Users/yumei.shih/Desktop/Practice/RoR/react-rails-shopping-cart/app/assets/stylesheets/items_list.scss */
+.stepper-input {
+  display: flex;
+  color: #666;
+  max-width: 120px;
+  margin: 0 auto;
+}
+/* line 54, /Users/yumei.shih/Desktop/Practice/RoR/react-rails-shopping-cart/app/assets/stylesheets/items_list.scss */
+.stepper-input .increment, .stepper-input .decrement {
+  background-color: Transparent;
+  border: none;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  color: inherit;
+  font-size: 30px;
+  line-height: 22px;
+}
+/* line 63, /Users/yumei.shih/Desktop/Practice/RoR/react-rails-shopping-cart/app/assets/stylesheets/items_list.scss */
+.stepper-input .increment:hover, .stepper-input .decrement:hover {
+  color: pink;
+  border-color: pink;
+  background: #F1F8E9;
+}
+/* line 69, /Users/yumei.shih/Desktop/Practice/RoR/react-rails-shopping-cart/app/assets/stylesheets/items_list.scss */
+.stepper-input .increment:active, .stepper-input .decrement:active {
+  color: #077915;
+  border-color: pink;
+  background: #F1F8E9;
+}
+/* line 75, /Users/yumei.shih/Desktop/Practice/RoR/react-rails-shopping-cart/app/assets/stylesheets/items_list.scss */
+.stepper-input .quantity {
+  height: 24px;
+  width: 48px;
+  text-align: center;
+  margin: 0 12px;
+  margin-top: 2px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+/* line 83, /Users/yumei.shih/Desktop/Practice/RoR/react-rails-shopping-cart/app/assets/stylesheets/items_list.scss */
+.stepper-input .quantity:focus {
+  outline: none;
+  border-color: #077915;
+}
+
+/* line 90, /Users/yumei.shih/Desktop/Practice/RoR/react-rails-shopping-cart/app/assets/stylesheets/items_list.scss */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
+ body{
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  height: 100%;
+}
+
+header {
+  width: 100%;
+  padding:10px 0px ;
+  background: #B2DFDB;
+  text-align: center;
+  top: 0;
+  display:flex;
+  justify-content: space-between;
+}
+
+
+footer {
+  width: 100%;
+  height: 60px;
+  background: #dddddd !important;
+  color: #999;
+  text-align: center;
+  bottom: 0;
+}
