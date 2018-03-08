@@ -1,3 +1,62 @@
 // Place all the styles related to the cart controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$white-gray:#EEEEEE;
+$light-2-green: #F1F8E9;
+$primary-green: #077915;
+
+
+
+.cart{
+  background: $white-gray;
+  text-align: center;
+  flex: 1 0 auto;
+  padding: 10% 5% 5% 5%;
+}
+.itemListforCart{
+  padding: 0% 5% 0% 5%;
+  background: $white-gray;
+  text-align: center;
+}
+.itemforCart{
+  margin: 8px;
+  float: left;
+  width: 100%;
+  height: 200px;
+  .img{
+      height: 100%;
+      width: auto;
+      float: left;
+      height: 100%;
+  }
+  .iteminfoforCart{
+      width: auto;
+     // float: right;
+      height: 100%;
+      background: $light-2-green;
+      padding: 15px;
+      text-align: center;
+  }
+}
+.trash{
+  background-color: Transparent;
+  border: none;
+  height: 25px;
+  width: 25px;
+  text-align: center;
+  color: #B0BEC5;
+  font-size: 25px;
+  line-height: 22px;
+  margin: 5px;
+  &:hover{
+      color: pink;
+      border-color: pink;
+      background: $light-2-green;
+
+  }
+  &:active{
+      color: $primary-green;
+      border-color: pink;
+      background: $light-2-green;
+  }
+}

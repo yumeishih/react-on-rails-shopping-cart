@@ -32,7 +32,7 @@ export default class ItemForCart extends Component {
     const { item } = this.props;
     return (
       <div className="itemforCart">
-        <img src={item.itemImg} alt={item.itemID} className="img" />
+        <img src={`../assets/${item.itemImg}`} alt={item.itemID} className="img" />
         <div className="iteminfoforCart">
           <h4>{item.itemName}</h4>
           <p>{item.describe}</p>

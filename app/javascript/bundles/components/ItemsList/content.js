@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 export default class Content extends Component {
   render() {
     const { addToCart, updateCart, shoppingCart } = this.props;
-    console.log("hihi")
     return (
       <div className="content">
         <div className="itemList">{this.props.items.map(item => (<Item

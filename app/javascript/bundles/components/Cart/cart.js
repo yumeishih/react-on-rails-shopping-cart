@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ItemForCart from './itemForCart';
-import calculateTotal from 'Assets/helper/calculateTotal';
+// import calculateTotal from 'Assets/helper/calculateTotal';
 import PropTypes from 'prop-types';
 
 
@@ -10,11 +10,11 @@ export default class Cart extends Component {
     this.state = {
       total: 0
     };
-    props.fetchCart();
+    //props.fetchCart();
   }
 
   componentWillReceiveProps(nextProps) {
-    const total = calculateTotal(nextProps.shoppingCart);
+    const total = 0 // calculateTotal(nextProps.shoppingCart);
     this.setState({ total });
     if (nextProps.isChanged) {
       nextProps.fetchCart();
