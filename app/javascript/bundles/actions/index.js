@@ -47,7 +47,7 @@ export const UPDATE_CART_SUCCESS = 'UPDATE_CART_SUCCESS';
 export const UPDATE_CART_FAILED = 'UPDATE_CART_FAILED';
 export const updateCart = (item, qty) => ({
   [CALL_API]: {
-    endpoint: `${item.itemID}/updatecart`,
+    endpoint: `updatecart/${item.itemID}`,
     props: {
       method: 'POST',
       body: JSON.stringify({ ...item, qty }),
@@ -64,7 +64,7 @@ export const DELETE_CART_SUCCESS = 'DELETE_CART_SUCCESS';
 export const DELETE_CART_FAILED = 'DELETE_CART_FAILED';
 export const deleteCart = (item) => ({
   [CALL_API]: {
-    endpoint: `${item.itemID}/deletecart`,
+    endpoint: `deletecart/${item.itemID}`,
     props: {
       method: 'GET',
     },

@@ -8,7 +8,6 @@ export default class Content extends Component {
     this.props.fetchItemList();
   }
   render() {
-    console.log(this.props.items)
     const { addToCart, updateCart, shoppingCart } = this.props;
     return (
       <div className="content">
@@ -25,34 +24,34 @@ export default class Content extends Component {
   }
 }
 
-// Content.propTypes = {
-//   items: PropTypes.arrayOf(PropTypes.shape({
-//     itemID: PropTypes.string,
-//     itemImg: PropTypes.string,
-//     itemName: PropTypes.string,
-//     describe: PropTypes.string,
-//     price: PropTypes.number,
-//     map: PropTypes.func
-//   })),
-//   shoppingCart: PropTypes.arrayOf(PropTypes.shape({
-//     itemID: PropTypes.string,
-//     itemImg: PropTypes.string,
-//     itemName: PropTypes.string,
-//     describe: PropTypes.string,
-//     price: PropTypes.number,
-//     qty: PropTypes.number
-//   })).isRequired,
-//   fetchItemList: PropTypes.func.isRequired,
-//   addToCart: PropTypes.func.isRequired,
-//   updateCart: PropTypes.func.isRequired,
-// };
+Content.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.shape({
+    itemID: PropTypes.string,
+    itemImg: PropTypes.string,
+    itemName: PropTypes.string,
+    describe: PropTypes.string,
+    price: PropTypes.number,
+    map: PropTypes.func
+  })),
+  shoppingCart: PropTypes.arrayOf(PropTypes.shape({
+    itemID: PropTypes.string,
+    itemImg: PropTypes.string,
+    itemName: PropTypes.string,
+    describe: PropTypes.string,
+    price: PropTypes.number,
+    qty: PropTypes.number
+  })).isRequired,
+  fetchItemList: PropTypes.func.isRequired,
+  addToCart: PropTypes.func.isRequired,
+  updateCart: PropTypes.func.isRequired,
+};
 
-// Content.defaultProps = {
-//   items: PropTypes.arrayOf(PropTypes.shape({
-//     itemID: '',
-//     itemImg: '',
-//     itemName: '',
-//     describe: '',
-//     price: 0,
-//   })),
-// };
+Content.defaultProps = {
+  items: PropTypes.arrayOf(PropTypes.shape({
+    itemID: '',
+    itemImg: '',
+    itemName: '',
+    describe: '',
+    price: 0,
+  })),
+};

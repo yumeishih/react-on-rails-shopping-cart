@@ -14,15 +14,16 @@ export default class Cart extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const total = 0 // calculateTotal(nextProps.shoppingCart);
+    const total = this.calculateTotal(nextProps.shoppingCart);
     this.setState({ total });
     if (nextProps.isChanged) {
       nextProps.fetchCart();
     }
   }
-
+  calculateTotal(cart) {
+    return cart.map((item) => { return item.qty * item.price; }).reduce((acc, cet) => acc + cet, 0);
+  }
   render() {
-    console.log("Cart")
     const { deleteCart, updateCart } = this.props;
     return (
       <div className="cart">
