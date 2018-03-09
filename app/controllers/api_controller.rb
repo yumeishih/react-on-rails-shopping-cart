@@ -4,6 +4,7 @@ class ApiController < ApplicationController
 
   def itemlist
     @item_list = ItemList.all
+    ItemList.add_new_label(@item_list)
     render :json => @item_list
   end
 

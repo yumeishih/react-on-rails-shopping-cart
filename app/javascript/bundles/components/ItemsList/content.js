@@ -8,6 +8,7 @@ export default class Content extends Component {
     this.props.fetchItemList();
   }
   render() {
+    console.log(this.props.items)
     const { addToCart, updateCart, shoppingCart } = this.props;
     return (
       <div className="content">

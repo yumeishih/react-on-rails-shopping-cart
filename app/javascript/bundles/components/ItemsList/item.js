@@ -27,10 +27,16 @@ export default class Item extends Component {
 
   render() {
     const { item } = this.props;
+    console.log( item.isNew )
+    let newItemSpan = null
+    if (item.isNew ) {
+      newItemSpan = <span className= "new-label">New!</span>
+    }
     return (
       <div className="item">
         <img src= {`../assets/${item.itemImg}`} alt={item.itemID} />
-        <div className="iteminfo">
+        {newItemSpan}
+        <div className="item-info">
           <h4>{item.itemName}</h4>
           <p>{item.describe}</p>
           <p>Price: {item.price}</p>
