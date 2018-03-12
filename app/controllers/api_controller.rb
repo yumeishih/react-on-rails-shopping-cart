@@ -14,21 +14,37 @@ class ApiController < ApplicationController
   end
 
   def addtocart
-    @cart = CartItem.new(item_params)
-    if @cart.save
-      render :json => @cart
+    if(params[:api] == nil)
+      render :json => { error: "No params" }, :status => :no_content
+    else
+      @cart = CartItem.new(item_params)
+      if @cart.save
+        render :json => @cart
+      else
+        render :json => {error: @cart.errors.full_messages }, :status => :bad_request
+      end
     end
   end
 
   def updatecart
-    if @item.update(item_params)
-      render :json => @item
+    if @item ==nil
+        render json: { error: "not dound item" }, status: :not_found
+    else
+      if @item.update(item_params)
+        render :json => @item
+      else
+        render json: @item.errors, status: :unprocessable_entity
+      end
     end
   end
 
   def deletecart
-    @item.destroy
-    render :json => { message: "delete OK" }
+    if @item ==nil
+      render json: { error: "not dound item" }, status: :not_found
+    else
+      @item.destroy
+      render :json => { message: "delete OK" }
+    end
   end
 
   private
@@ -38,6 +54,7 @@ class ApiController < ApplicationController
 
   def get_item
     @item = CartItem.where( :itemID => params[:id] ).first
+
   end
 
 end

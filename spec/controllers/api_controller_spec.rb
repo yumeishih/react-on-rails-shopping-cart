@@ -9,6 +9,7 @@ RSpec.describe ApiController, :type => :controller do
     price: 10000,
     qty:2
   }
+
   item_params_update = {
     itemID: 'fakeitem',
     itemImg: './src/imgs/items/fakeitem.jpg',
@@ -31,7 +32,7 @@ RSpec.describe ApiController, :type => :controller do
     response.should have_http_status 200
   end
 
-  it "data create update delete" do
+  it "data create update delete: success" do
     post :addtocart, params: { api: item_params}
     response.should have_http_status 200
 
@@ -41,4 +42,27 @@ RSpec.describe ApiController, :type => :controller do
     get :deletecart, params: {id: 'fakeitem'}
     response.should have_http_status 200
   end
+
+  it "data create: no content" do
+    post :addtocart, params: {}
+    response.should have_http_status 204
+  end
+
+  it "data create update: not found" do
+    post :addtocart, params: { api: item_params}
+    response.should have_http_status 200
+    post :updatecart, params: {id: 'youcantfindme', api: item_params_update}
+    response.should have_http_status 404
+  end
+
+  it "data create delete: not found" do
+    post :addtocart, params: { api: item_params}
+    response.should have_http_status 200
+    get :deletecart, params: {id: 'youcantfindme'}
+    response.should have_http_status 404
+  end
+
+
+
+
 end
