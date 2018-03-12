@@ -6,7 +6,6 @@ import Content from '../../bundles/containers/content';
 import ContentComponent from '../../bundles/components/ItemsList/content'
 import reducers from '../../bundles/reducers';
 
-
 describe('/containers/content', () => {
   const middleWares = [];
   const mockStore = configureStore(middleWares);

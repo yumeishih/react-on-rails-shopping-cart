@@ -6,7 +6,6 @@ import Cart from '../../bundles/containers/cart';
 import CartComponent from '../../bundles/components/Cart/cart'
 import reducers from '../../bundles/reducers';
 
-
 describe('/containers/cart', () => {
   const middleWares = [];
   const mockStore = configureStore(middleWares);

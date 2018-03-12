@@ -9,7 +9,6 @@ import api from '../../middleware/api';
 import ReduxThunk from 'redux-thunk';
 
 const store = createStore(reducers, applyMiddleware(ReduxThunk, api));
-
 export default () =>(
   <Provider store={store}>
     <Content />

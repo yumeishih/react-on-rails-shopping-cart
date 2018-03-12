@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Item from './item';
 import PropTypes from 'prop-types';
 
-
 export default class Content extends Component {
   componentDidMount() {
     this.props.fetchItemList();

@@ -1,9 +1,7 @@
 import { connect } from 'react-redux';
-import { fetchCart, deleteCart, updateCart } from '../actions/index';
 import { bindActionCreators } from 'redux';
-
+import { fetchCart, deleteCart, updateCart } from '../actions/index';
 import Cart from '../components/Cart/cart';
-
 
 const mapStateToProps = (state) => ({
   shoppingCart: state.ShoppingCartReducer.shoppingCart,

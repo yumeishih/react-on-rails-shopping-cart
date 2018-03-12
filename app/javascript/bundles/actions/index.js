@@ -42,7 +42,6 @@ export const addToCart = (item, qty) => ({
   }
 });
 
-
 export const UPDATE_CART_SUCCESS = 'UPDATE_CART_SUCCESS';
 export const UPDATE_CART_FAILED = 'UPDATE_CART_FAILED';
 export const updateCart = (item, qty) => ({

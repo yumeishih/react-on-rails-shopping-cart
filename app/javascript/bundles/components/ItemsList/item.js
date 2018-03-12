@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Counter from '../common/counter';
 import _ from 'lodash';
+import Counter from '../common/counter';
 
 export default class Item extends Component {
   constructor() {

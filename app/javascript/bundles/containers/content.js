@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import Content from '../components/ItemsList/content';
 import { fetchItemList, addToCart, updateCart } from '../actions/index';
-import { bindActionCreators } from 'redux';
 
 const mapStateToProps = (state) => ({
   items: state.ItemsReducer.items,
