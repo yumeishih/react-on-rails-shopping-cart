@@ -7,5 +7,7 @@ matrix:
         - bundle exec rspec
 
     - language: node_js
-      script:
-       - npm run test
+      node_js:
+        - "6"
+        - "7"
+      script: npm run test
