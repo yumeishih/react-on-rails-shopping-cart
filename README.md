@@ -1,5 +1,5 @@
 # README
-
+[![Build Status](https://travis-ci.org/yumeishih/react-on-rails-shopping-cart.svg?branch=master)](https://travis-ci.org/yumeishih/react-on-rails-shopping-cart)
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
