@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ItemForCart from './itemForCart';
-// import calculateTotal from 'Assets/helper/calculateTotal';
 import PropTypes from 'prop-types';
 
 

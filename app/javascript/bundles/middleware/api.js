@@ -29,7 +29,7 @@ export default store => next => action => {
     },
     error => {
       next(actionWith({
-        erroMsg: error.message,
+        errorMsg: error.message,
         type: failureType
       }));
     }
