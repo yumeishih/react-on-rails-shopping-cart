@@ -9,7 +9,6 @@ RSpec.describe ApiController, :type => :controller do
     price: 10000,
     qty:2
   }
-
   item_params_update = {
     itemID: 'fakeitem',
     itemImg: './src/imgs/items/fakeitem.jpg',
@@ -61,8 +60,4 @@ RSpec.describe ApiController, :type => :controller do
     get :deletecart, params: {id: 'youcantfindme'}
     response.should have_http_status 404
   end
-
-
-
-
 end

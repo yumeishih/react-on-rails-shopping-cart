@@ -28,7 +28,7 @@ class ApiController < ApplicationController
 
   def updatecart
     if @item ==nil
-        render json: { error: "not dound item" }, status: :not_found
+        render json: { error: "not found item" }, status: :not_found
     else
       if @item.update(item_params)
         render :json => @item
@@ -40,7 +40,7 @@ class ApiController < ApplicationController
 
   def deletecart
     if @item ==nil
-      render json: { error: "not dound item" }, status: :not_found
+      render json: { error: "not found item" }, status: :not_found
     else
       @item.destroy
       render :json => { message: "delete OK" }
