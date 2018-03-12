@@ -1,4 +1,4 @@
-import shoppingCartReducer from '../../bundles/reducers/shoppingCartReducer'
+import shoppingCartReducer from '../../bundles/reducers/shoppingCartReducer';
 
 describe('Reducers/shoppingCartReducer', () => {
   const fakeitem = {
@@ -7,14 +7,14 @@ describe('Reducers/shoppingCartReducer', () => {
     itemName: 'fakeitem',
     describe: 'fakeitem',
     price: 10000,
-    qty:2
-  }
+    qty: 2
+  };
   it('Initial state', () => {
     const res = shoppingCartReducer(undefined, {});
     expect(res).to.deep.equal({
       shoppingCart: [],
       isChanged: false
-    })
+    });
   });
   it('ADD_TO_CART_SUCCESS', () => {
     const res = shoppingCartReducer(undefined, {
@@ -25,7 +25,7 @@ describe('Reducers/shoppingCartReducer', () => {
     expect(res).to.deep.equal({
       shoppingCart: [fakeitem],
       isChanged: true
-    })
+    });
   });
   it('UPDATE_CART_SUCCESS', () => {
     const res = shoppingCartReducer(undefined, {
@@ -35,7 +35,7 @@ describe('Reducers/shoppingCartReducer', () => {
     expect(res).to.deep.equal({
       shoppingCart: [],
       isChanged: true
-    })
+    });
   });
   it('DELETE_CART_SUCCESS', () => {
     const res = shoppingCartReducer(undefined, {
@@ -45,7 +45,7 @@ describe('Reducers/shoppingCartReducer', () => {
     expect(res).to.deep.equal({
       shoppingCart: [],
       isChanged: true
-    })
+    });
   });
   it('FETCH_CART_SUCCESS', () => {
     const res = shoppingCartReducer(undefined, {
@@ -56,6 +56,6 @@ describe('Reducers/shoppingCartReducer', () => {
     expect(res).to.deep.equal({
       shoppingCart: [fakeitem],
       isChanged: false
-    })
+    });
   });
 });

@@ -1,5 +1,5 @@
 import React from 'react';
-import ItemForCart from '../../../bundles/components/Cart/itemForCart'
+import ItemForCart from '../../../bundles/components/Cart/itemForCart';
 
 describe('/components/Cart/ItemForCart', () => {
   const fakeitem = {
@@ -8,16 +8,16 @@ describe('/components/Cart/ItemForCart', () => {
     itemName: 'fakeitem',
     describe: 'fakeitem',
     price: 10000,
-    qty:2
-  }
-  const fakeshoppingCart =[fakeitem]
-  const deleteCartSpy = spy()
-  const updateCartSpy= spy()
+    qty: 2
+  };
+  const fakeshoppingCart = [fakeitem];
+  const deleteCartSpy = spy();
+  const updateCartSpy = spy();
   const wrapper = shallow(<ItemForCart
     key={fakeitem.itemID}
     item={fakeitem}
     shoppingCart={fakeshoppingCart}
-    updateCart = {updateCartSpy}
+    updateCart={updateCartSpy}
     deleteCart={deleteCartSpy}
   />);
   it('type of ItemForCart', () => {
@@ -48,11 +48,11 @@ describe('/components/Cart/ItemForCart', () => {
     expect(wrapper.childAt(1).find('Counter')).to.exist;
   });
   it('show Total', () => {
-    expect(wrapper.childAt(1).childAt(4).text()).to.equal(`Total: ${fakeitem.price*fakeitem.qty}`)
+    expect(wrapper.childAt(1).childAt(4).text()).to.equal(`Total: ${fakeitem.price * fakeitem.qty}`);
   });
   it('delete icon: deleteCart()', () => {
     wrapper.find('button').simulate('click');
-    expect(deleteCartSpy.called).to.equal(true)
+    expect(deleteCartSpy.called).to.equal(true);
   });
 });
 

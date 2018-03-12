@@ -1,24 +1,24 @@
 import React from 'react';
-import Item from '../../../bundles/components/ItemsList/item'
+import Item from '../../../bundles/components/ItemsList/item';
 
 describe('/components/ItemsList/Item', () => {
-  const fakekey = 'fakeitemkey'
+  const fakekey = 'fakeitemkey';
   const fakeitem = {
     itemID: 'fakeitem',
     itemImg: './src/imgs/items/fakeitem.jpg',
     itemName: 'fakeitem',
     describe: 'fakeitem',
     price: 10000
-  }
-  const fakeshoppingCart =[fakeitem]
-  const addToCartSpy = spy()
-  const updateCartSpy= spy()
+  };
+  const fakeshoppingCart = [fakeitem];
+  const addToCartSpy = spy();
+  const updateCartSpy = spy();
 
   const wrapper = shallow(<Item
     key={fakeitem.itemID}
     item={fakeitem}
     shoppingCart={fakeshoppingCart}
-    addToCart= {addToCartSpy}
+    addToCart={addToCartSpy}
     updateCart={updateCartSpy}
   />);
 
@@ -51,18 +51,18 @@ describe('/components/ItemsList/Item', () => {
   });
   it('addToCart button click: updateCart', () => {
     wrapper.find('button').simulate('click');
-    expect(updateCartSpy.called).to.equal(true)
+    expect(updateCartSpy.called).to.equal(true);
   });
   it('addToCart button click: addToCart', () => {
     const wrapper2 = shallow(<Item
       key={fakekey}
       item={fakeitem}
-      shoppingCart= {[]}
-      addToCart= {addToCartSpy}
+      shoppingCart={[]}
+      addToCart={addToCartSpy}
       updateCart={updateCartSpy}
     />);
     wrapper2.find('button').simulate('click');
-    expect(addToCartSpy.called).to.equal(true)
+    expect(addToCartSpy.called).to.equal(true);
   });
 });
 

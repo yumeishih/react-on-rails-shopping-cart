@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Item from './item';
 import PropTypes from 'prop-types';
+import Item from './item';
 
 export default class Content extends Component {
   componentDidMount() {

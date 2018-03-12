@@ -1,10 +1,10 @@
 import React from 'react';
-import Cart from '../../../bundles/components/Cart/cart'
+import Cart from '../../../bundles/components/Cart/cart';
 
 describe('/components/Cart/Cart', () => {
-  const fakefetchCart = spy()
-  const fakeshoppingCart =[]
-  const wrapper = shallow(<Cart fetchCart={fakefetchCart} shoppingCart={fakeshoppingCart}/>);
+  const fakefetchCart = spy();
+  const fakeshoppingCart = [];
+  const wrapper = shallow(<Cart fetchCart={fakefetchCart} shoppingCart={fakeshoppingCart} />);
   it('type of Cart', () => {
     expect(wrapper.type()).to.equal('div');
   });
@@ -17,9 +17,9 @@ describe('/components/Cart/Cart', () => {
   });
   it('second child type of "h2" and get total', () => {
     expect(wrapper.childAt(1).type()).to.equal('h2');
-    expect(wrapper.childAt(1).text()).to.equal(`Total: 0`)
+    expect(wrapper.childAt(1).text()).to.equal('Total: 0');
   });
   it('fetchCart has been called', () => {
-    expect(fakefetchCart.called).to.equal(true)
+    expect(fakefetchCart.called).to.equal(true);
   });
 });

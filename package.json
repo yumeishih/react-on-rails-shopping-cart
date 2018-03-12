@@ -7,8 +7,9 @@
     "test": "mocha --compilers js:babel-core/register --require ./app/javascript/test/helpers.js --require ./app/javascript/test/dom.js --recursive ./app/javascript/test",
     "dev": "webpack-dev-server --content-base --inline --hot",
     "server": "node ./server/server.js",
-    "eslint": "eslint src",
-    "eslint-fix": "eslint --fix src"
+    "eslint-init": "eslint --init",
+    "eslint": "eslint app/javascript/bundles",
+    "eslint-fix": "eslint --fix app/javascript/bundles"
   },
   "dependencies": {
     "@rails/webpacker": "^3.3.0",
@@ -47,9 +48,9 @@
     "eslint-config-airbnb": "^16.1.0",
     "eslint-import-resolver-webpack": "^0.8.4",
     "eslint-loader": "^1.9.0",
-    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-import": "^2.9.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.5.1",
+    "eslint-plugin-react": "^7.7.0",
     "html-webpack-plugin": "^2.30.1",
     "jsdom": "^11.6.0",
     "mocha": "^5.0.0",

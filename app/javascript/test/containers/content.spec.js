@@ -3,18 +3,16 @@ import React from 'react';
 import { Provider } from 'react-redux';
 
 import Content from '../../bundles/containers/content';
-import ContentComponent from '../../bundles/components/ItemsList/content'
+import ContentComponent from '../../bundles/components/ItemsList/content';
 import reducers from '../../bundles/reducers';
 
 describe('/containers/content', () => {
   const middleWares = [];
   const mockStore = configureStore(middleWares);
   const store = mockStore(reducers);
-  const wrapper = shallow(
-    <Provider store={store}>
-      <Content />
-    </Provider>
-  );
+  const wrapper = shallow(<Provider store={store}>
+    <Content />
+                          </Provider>);
   it('ContentComponent exist', () => {
     expect(wrapper.find(ContentComponent)).to.exist;
   });
@@ -33,5 +31,4 @@ describe('/containers/content', () => {
   it('Props exist: fetchItemList', () => {
     expect(wrapper.find('[fetchItemList]')).to.exist;
   });
-
-})
+});
