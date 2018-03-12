@@ -6,6 +6,7 @@ FactoryBot.define do
     itemName 'fakeitem'
     describe 'fakeitem'
     price 10000
+    created_at ''
   end
 
 end
