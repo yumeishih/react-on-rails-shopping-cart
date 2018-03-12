@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --watch --compilers js:babel-core/register --require ./app/javascript/test/helpers.js --require ./app/javascript/test/dom.js --recursive ./app/javascript/test",
+    "test": "mocha --compilers js:babel-core/register --require ./app/javascript/test/helpers.js --require ./app/javascript/test/dom.js --recursive ./app/javascript/test",
     "dev": "webpack-dev-server --content-base --inline --hot",
     "server": "node ./server/server.js",
     "eslint": "eslint src",
