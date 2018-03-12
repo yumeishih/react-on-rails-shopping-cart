@@ -3,3 +3,4 @@ rbenv:
   - 1.1.1
 script:
   - bundle exec rspec
+  - npm run test
