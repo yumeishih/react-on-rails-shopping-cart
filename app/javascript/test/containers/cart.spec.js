@@ -11,7 +11,6 @@ describe('/containers/cart', () => {
   const middleWares = [];
   const mockStore = configureStore(middleWares);
   const store = mockStore(reducers);
-  console.log(reducers)
   const wrapper = shallow(
     <Provider store={store}>
       <Cart />

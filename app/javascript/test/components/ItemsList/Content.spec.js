@@ -2,7 +2,6 @@ import React from 'react';
 import Content from '../../../bundles/components/ItemsList/content';
 
 describe('/components/ItemsList/Content', () => {
-  console.log(Content.prototype)
   const fakefetchItemList = spy()
   const fakeitems = []
   const wrapper = shallow(<Content fetchItemList = {fakefetchItemList} items={fakeitems}/>);

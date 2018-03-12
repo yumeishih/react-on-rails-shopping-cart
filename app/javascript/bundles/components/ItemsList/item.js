@@ -27,7 +27,6 @@ export default class Item extends Component {
 
   render() {
     const { item } = this.props;
-    console.log( item.isNew )
     let newItemSpan = null
     if (item.isNew ) {
       newItemSpan = <span className= "new-label">New!</span>
