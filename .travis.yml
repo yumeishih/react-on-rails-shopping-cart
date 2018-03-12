@@ -1,6 +1,11 @@
-language: ruby
-rbenv:
-  - 1.1.1
-script:
-  - bundle exec rspec
-  - npm run test
+matrix:
+  include:
+    - language: ruby
+      rbenv:
+        - 1.1.1
+      script:
+        - bundle exec rspec
+
+    - lamguage: node-js
+      script:
+       - npm run test
