@@ -6,6 +6,6 @@ matrix:
       script:
         - bundle exec rspec
 
-    - lamguage: node_js
+    - language: node_js
       script:
        - npm run test
