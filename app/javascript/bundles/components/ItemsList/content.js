@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Item from './item';
+import { itemProps, itemPropsInit } from '../common/defaultPropTypes.js';
 
 export default class Content extends Component {
   componentDidMount() {
+    this.props.fetchCart();
     this.props.fetchItemList();
   }
   render() {
@@ -24,33 +26,14 @@ export default class Content extends Component {
 }
 
 Content.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.shape({
-    itemID: PropTypes.string,
-    itemImg: PropTypes.string,
-    itemName: PropTypes.string,
-    describe: PropTypes.string,
-    price: PropTypes.number,
-    map: PropTypes.func
-  })),
-  shoppingCart: PropTypes.arrayOf(PropTypes.shape({
-    itemID: PropTypes.string,
-    itemImg: PropTypes.string,
-    itemName: PropTypes.string,
-    describe: PropTypes.string,
-    price: PropTypes.number,
-    qty: PropTypes.number
-  })).isRequired,
+  items: PropTypes.arrayOf(PropTypes.shape(itemProps)),
+  shoppingCart: PropTypes.arrayOf(PropTypes.shape(itemProps)).isRequired,
   fetchItemList: PropTypes.func.isRequired,
+  fetchCart: PropTypes.func.isRequired,
   addToCart: PropTypes.func.isRequired,
-  updateCart: PropTypes.func.isRequired,
+  updateCart: PropTypes.func.isRequired
 };
 
 Content.defaultProps = {
-  items: PropTypes.arrayOf(PropTypes.shape({
-    itemID: '',
-    itemImg: '',
-    itemName: '',
-    describe: '',
-    price: 0,
-  })),
+  items: PropTypes.arrayOf(PropTypes.shape(itemPropsInit)),
 };

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import _ from 'lodash';
+import { findIndex } from 'lodash';
 import Counter from '../common/counter';
+import { itemProps, itemPropsInit } from '../common/defaultPropTypes.js';
 
 export default class Item extends Component {
   constructor() {
@@ -17,7 +18,7 @@ export default class Item extends Component {
   }
   addToCartClick() {
     const { item, shoppingCart } = this.props;
-    const index = _.findIndex(shoppingCart, (element) => { return element.itemID === item.itemID; });
+    const index = findIndex(shoppingCart, { itemID: item.itemID });
     if (index === -1) {
       this.props.addToCart(item, this.state.qty);
     } else {
@@ -27,14 +28,10 @@ export default class Item extends Component {
 
   render() {
     const { item } = this.props;
-    let newItemSpan = null;
-    if (item.isNew) {
-      newItemSpan = <span className="new-label">New!</span>;
-    }
     return (
       <div className="item">
         <img src={`../assets/${item.itemImg}`} alt={item.itemID} />
-        {newItemSpan}
+        { item.isNew && <span className="new-label">New!</span> }
         <div className="item-info">
           <h4>{item.itemName}</h4>
           <p>{item.describe}</p>
@@ -53,33 +50,12 @@ export default class Item extends Component {
 }
 
 Item.propTypes = {
-  item: PropTypes.shape({
-    itemID: PropTypes.string,
-    itemImg: PropTypes.string,
-    itemName: PropTypes.string,
-    describe: PropTypes.string,
-    price: PropTypes.number,
-    qty: PropTypes.number
-  }),
-  shoppingCart: PropTypes.arrayOf(PropTypes.shape({
-    itemID: PropTypes.string,
-    itemImg: PropTypes.string,
-    itemName: PropTypes.string,
-    describe: PropTypes.string,
-    price: PropTypes.number,
-    qty: PropTypes.number
-  })).isRequired,
+  item: PropTypes.shape(itemProps),
+  shoppingCart: PropTypes.arrayOf(PropTypes.shape(itemProps)).isRequired,
   addToCart: PropTypes.func.isRequired,
   updateCart: PropTypes.func.isRequired,
 };
 
 Item.defaultProps = {
-  item: PropTypes.shape({
-    itemID: '',
-    itemImg: '',
-    itemName: '',
-    describe: '',
-    price: 0,
-    qty: 0
-  }),
+  item: PropTypes.shape(itemPropsInit),
 };

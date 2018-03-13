@@ -3,6 +3,7 @@ import Content from '../../../bundles/components/ItemsList/content';
 
 describe('/components/ItemsList/Content', () => {
   const fakefetchItemList = spy();
+  const fakefetchCart = spy();
   const addToCart = ()=>{};
   const updateCart = ()=>{};
   const fakeitems = [];
@@ -10,6 +11,7 @@ describe('/components/ItemsList/Content', () => {
   const wrapper = shallow(<Content
     items={fakeitems}
     shoppingCart ={fakeshoppingCart}
+    fetchCart ={fakefetchCart}
     fetchItemList={fakefetchItemList}
     addToCart={addToCart}
     updateCart={updateCart}
@@ -25,5 +27,8 @@ describe('/components/ItemsList/Content', () => {
   });
   it('fetchItemList has been called', () => {
     expect(fakefetchItemList.called).to.equal(true);
+  });
+  it('fetchCart has been called', () => {
+    expect(fakefetchCart.called).to.equal(true);
   });
 });

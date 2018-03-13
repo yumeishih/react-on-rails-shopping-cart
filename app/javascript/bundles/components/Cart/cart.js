@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { itemProps } from '../common/defaultPropTypes.js';
 import ItemForCart from './itemForCart';
 
 export default class Cart extends Component {
@@ -40,15 +41,7 @@ export default class Cart extends Component {
 }
 
 Cart.propTypes = {
-  shoppingCart: PropTypes.arrayOf(PropTypes.shape({
-    itemID: PropTypes.string,
-    itemImg: PropTypes.string,
-    itemName: PropTypes.string,
-    describe: PropTypes.string,
-    price: PropTypes.number,
-    qty: PropTypes.number,
-    map: PropTypes.func
-  })).isRequired,
+  shoppingCart: PropTypes.arrayOf(PropTypes.shape(itemProps)).isRequired,
   fetchCart: PropTypes.func.isRequired,
   deleteCart: PropTypes.func.isRequired,
   updateCart: PropTypes.func.isRequired,

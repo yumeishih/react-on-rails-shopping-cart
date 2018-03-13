@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Counter from '../common/counter';
+import { itemProps, itemPropsInit } from '../common/defaultPropTypes.js';
+
 
 export default class ItemForCart extends Component {
   constructor(props) {
@@ -49,25 +51,11 @@ export default class ItemForCart extends Component {
 }
 
 ItemForCart.propTypes = {
-  item: PropTypes.shape({
-    itemID: PropTypes.string,
-    itemImg: PropTypes.string,
-    itemName: PropTypes.string,
-    describe: PropTypes.string,
-    price: PropTypes.number,
-    qty: PropTypes.number
-  }),
+  item: PropTypes.shape(itemProps),
   updateCart: PropTypes.func.isRequired,
   deleteCart: PropTypes.func.isRequired
 };
 
 ItemForCart.defaultProps = {
-  item: PropTypes.shape({
-    itemID: '',
-    itemImg: '',
-    itemName: '',
-    describe: '',
-    price: 0,
-    qty: 0
-  }),
+  item: PropTypes.shape(itemPropsInit),
 };

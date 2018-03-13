@@ -39,7 +39,7 @@ class ApiController < ApplicationController
   end
 
   def deletecart
-    if @item ==nil
+    if @item == nil
       render json: { error: "not found item" }, status: :not_found
     else
       @item.destroy
