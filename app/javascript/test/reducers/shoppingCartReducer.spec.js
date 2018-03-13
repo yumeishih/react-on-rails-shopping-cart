@@ -9,6 +9,7 @@ describe('Reducers/shoppingCartReducer', () => {
     price: 10000,
     qty: 2
   };
+
   it('Initial state', () => {
     const res = shoppingCartReducer(undefined, {});
     expect(res).to.deep.equal({
@@ -16,6 +17,7 @@ describe('Reducers/shoppingCartReducer', () => {
       isChanged: false
     });
   });
+
   it('ADD_TO_CART_SUCCESS', () => {
     const res = shoppingCartReducer(undefined, {
       type: 'ADD_TO_CART_SUCCESS',
@@ -27,6 +29,7 @@ describe('Reducers/shoppingCartReducer', () => {
       isChanged: true
     });
   });
+
   it('UPDATE_CART_SUCCESS', () => {
     const res = shoppingCartReducer(undefined, {
       type: 'UPDATE_CART_SUCCESS',
@@ -37,6 +40,7 @@ describe('Reducers/shoppingCartReducer', () => {
       isChanged: true
     });
   });
+
   it('DELETE_CART_SUCCESS', () => {
     const res = shoppingCartReducer(undefined, {
       type: 'DELETE_CART_SUCCESS',
@@ -47,6 +51,7 @@ describe('Reducers/shoppingCartReducer', () => {
       isChanged: true
     });
   });
+
   it('FETCH_CART_SUCCESS', () => {
     const res = shoppingCartReducer(undefined, {
       type: 'FETCH_CART_SUCCESS',

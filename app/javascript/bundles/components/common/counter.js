@@ -11,14 +11,17 @@ export default class Counter extends Component {
     this.decrement = this.decrement.bind(this);
     this.feed = this.feed.bind(this);
   }
+
   componentWillReceiveProps(nextProps) {
     if (this.props.qty !== nextProps.qty) this.setState({ value: nextProps.qty });
   }
+
   increment() {
     const newValue = Number(this.state.value) + 1;
     this.setState({ value: newValue });
     this.props.updateQty(newValue);
   }
+
   decrement() {
     if (this.state.value > 1) {
       const newValue = Number(this.state.value) - 1;
@@ -26,6 +29,7 @@ export default class Counter extends Component {
       this.props.updateQty(newValue);
     }
   }
+
   feed(e) {
     const newValue = e.target.value;
     this.setState({ value: newValue });

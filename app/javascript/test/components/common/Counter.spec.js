@@ -15,16 +15,16 @@ describe('/components/common/Counter', () => {
   const decrementSpy = spy(Counter.prototype, 'decrement');
   const incrementSpy = spy(Counter.prototype, 'increment');
   const feedSpy = spy(Counter.prototype, 'feed');
-
-
   const wrapper = shallow(<Counter item={fakeitem} updateQty={updateQty} />);
 
   it('type of Counter', () => {
     expect(wrapper.type()).to.equal('div');
   });
+
   it('has a class name of "stepper-input"', () => {
     expect(wrapper.find('.stepper-input')).to.exist;
   });
+
   it('first child is a "button" has class name of "decrement"', () => {
     expect(wrapper.childAt(0).type()).to.equal('button');
     expect(wrapper.childAt(0).props().className).to.equal('decrement');
@@ -34,6 +34,7 @@ describe('/components/common/Counter', () => {
     expect(wrapper.childAt(1).type()).to.equal('input');
     expect(wrapper.childAt(1).props().className).to.equal('quantity');
   });
+
   it('third child is a "button" has class name of "increment"', () => {
     expect(wrapper.childAt(2).type()).to.equal('button');
     expect(wrapper.childAt(2).props().className).to.equal('increment');

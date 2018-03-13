@@ -9,12 +9,14 @@ describe('Reducers/itemsReducers', () => {
     price: 10000,
     qty: 2
   };
+
   it('Initial state', () => {
     const res = itemsReducer(undefined, {});
     expect(res).to.deep.equal({
       items: []
     });
   });
+
   it('FETCH_ITEMLIST_SUCCESS', () => {
     const res = itemsReducer(undefined, {
       type: 'FETCH_ITEMLIST_SUCCESS',

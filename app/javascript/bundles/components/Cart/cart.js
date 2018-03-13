@@ -19,9 +19,11 @@ export default class Cart extends Component {
       nextProps.fetchCart();
     }
   }
+
   calculateTotal(cart) {
     return cart.map((item) => { return item.qty * item.price; }).reduce((acc, cet) => acc + cet, 0);
   }
+
   render() {
     const { deleteCart, updateCart } = this.props;
     return (

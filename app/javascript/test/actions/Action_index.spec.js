@@ -12,6 +12,7 @@ describe('Actions', () => {
     price: 10000,
     qty: 1
   };
+
   it('fetchItemList', () => {
     const expectedAction = {
       endpoint: 'itemlist',
@@ -22,6 +23,7 @@ describe('Actions', () => {
     };
     expect(Actions.fetchItemList()[CALL_API]).to.deep.equal(expectedAction);
   });
+
   it('fetchCart', () => {
     const expectedAction = {
       endpoint: 'cart',
@@ -33,6 +35,7 @@ describe('Actions', () => {
     };
     expect(Actions.fetchCart()[CALL_API]).to.deep.equal(expectedAction);
   });
+
   it('addToCart', () => {
     const expectedAction = {
       endpoint: 'addtocart',
@@ -48,6 +51,7 @@ describe('Actions', () => {
     };
     expect(Actions.addToCart(fakeItem, 2)[CALL_API]).to.deep.equal(expectedAction);
   });
+
   it('updateCart', () => {
     const expectedAction = {
       endpoint: `updatecart/${fakeItem.itemID}`,
@@ -63,6 +67,7 @@ describe('Actions', () => {
     };
     expect(Actions.updateCart(fakeItem, 2)[CALL_API]).to.deep.equal(expectedAction);
   });
+
   it('deleteCart', () => {
     const expectedAction = {
       endpoint: `deletecart/${fakeItem.itemID}`,

@@ -11,7 +11,6 @@ export const CALL_API = 'CALL_API';
 export default store => next => action => {
   const callAPI = action[CALL_API];
   if (typeof callAPI === 'undefined') return next(action);
-
   const [successType, failureType] = callAPI.types;
   const { isChanged } = callAPI;
   const actionWith = (newInfo) => {
