@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   post 'api/updatecart/:id', to: 'api#updatecart'
   get 'api/deletecart/:id', to: 'api#deletecart'
   get 'cart', to: 'cart#index'
-  root :to => "items_list#index"
+  root to: 'items_list#index'
 end
