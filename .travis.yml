@@ -3,6 +3,7 @@ matrix:
     - language: ruby
       rbenv:
         - 1.1.1
+      config_file: ".rubocop.yml"
       script:
         - bundle exec rspec
         - bundle exec rubocop
@@ -13,4 +14,4 @@ matrix:
         - "7"
       script:
         - npm run test
-        - npm run eslint-fix
+        - npm run eslint

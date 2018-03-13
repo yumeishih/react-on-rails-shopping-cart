@@ -9,6 +9,7 @@ AllCops:
     - 'node_modules/**/*'
     - 'Gemfile'
     - 'bin/**/*'
+    - 'vendor/**/*'
 Documentation:
   Enabled: false
 Metrics/LineLength:
