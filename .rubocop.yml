@@ -1,0 +1,18 @@
+AllCops:
+  Include:
+    - Rakefile
+    - config.ru
+  Exclude:
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
+    - 'node_modules/**/*'
+    - 'Gemfile'
+    - 'bin/**/*'
+Documentation:
+  Enabled: false
+Metrics/LineLength:
+  Max: 100
+Metrics/BlockLength:
+  Exclude:
+    - "**/*_spec.rb"

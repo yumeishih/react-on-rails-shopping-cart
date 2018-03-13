@@ -17,6 +17,7 @@ RSpec.describe ApiController, type: :controller do
     price: 10_000,
     qty: 10
   }
+
   describe 'True' do
     it 'should be true' do
       true.should be_truthy

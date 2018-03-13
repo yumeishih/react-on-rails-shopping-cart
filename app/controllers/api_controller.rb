@@ -1,6 +1,6 @@
 class ApiController < ApplicationController
   protect_from_forgery with: :null_session
-  before_action :get_item, only: %i[updatecart deletecart]
+  before_action :find_item, only: %i[updatecart deletecart]
 
   def itemlist
     @item_list = ItemList.all
@@ -29,12 +29,10 @@ class ApiController < ApplicationController
   def updatecart
     if @item.nil?
       render json: { error: 'not found item' }, status: :not_found
+    elsif @item.update(item_params)
+      render json: @item
     else
-      if @item.update(item_params)
-        render json: @item
-      else
-        render json: @item.errors.full_messages, status: :unprocessable_entity
-      end
+      render json: @item.errors.full_messages, status: :unprocessable_entity
     end
   end
 
@@ -53,7 +51,7 @@ class ApiController < ApplicationController
     params.require(:api).permit(:itemID, :itemImg, :itemName, :describe, :price, :qty)
   end
 
-  def get_item
+  def find_item
     @item = CartItem.where(itemID: params[:id]).first
   end
 end

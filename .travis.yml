@@ -5,6 +5,7 @@ matrix:
         - 1.1.1
       script:
         - bundle exec rspec
+        - bundle exec rubocop
 
     - language: node_js
       node_js:
