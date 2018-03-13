@@ -17,7 +17,7 @@ describe('/components/common/Counter', () => {
   const feedSpy = spy(Counter.prototype, 'feed');
 
 
-  const wrapper = shallow(<Counter item={fakeitem} qty="1" updateQty={updateQty} />);
+  const wrapper = shallow(<Counter item={fakeitem} updateQty={updateQty} />);
 
   it('type of Counter', () => {
     expect(wrapper.type()).to.equal('div');

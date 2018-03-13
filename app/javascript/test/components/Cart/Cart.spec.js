@@ -3,8 +3,17 @@ import Cart from '../../../bundles/components/Cart/cart';
 
 describe('/components/Cart/Cart', () => {
   const fakefetchCart = spy();
+  const deleteCart =()=>{};
+  const updateCart =()=>{};
+  const isChanged = false;
   const fakeshoppingCart = [];
-  const wrapper = shallow(<Cart fetchCart={fakefetchCart} shoppingCart={fakeshoppingCart} />);
+  const wrapper = shallow(<Cart
+    fetchCart={fakefetchCart}
+    shoppingCart={fakeshoppingCart}
+    deleteCart ={deleteCart}
+    updateCart = {updateCart}
+    isChanged = {isChanged}
+    />);
   it('type of Cart', () => {
     expect(wrapper.type()).to.equal('div');
   });

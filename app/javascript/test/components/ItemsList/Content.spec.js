@@ -3,8 +3,17 @@ import Content from '../../../bundles/components/ItemsList/content';
 
 describe('/components/ItemsList/Content', () => {
   const fakefetchItemList = spy();
+  const addToCart = ()=>{};
+  const updateCart = ()=>{};
   const fakeitems = [];
-  const wrapper = shallow(<Content fetchItemList={fakefetchItemList} items={fakeitems} />);
+  const fakeshoppingCart =[]
+  const wrapper = shallow(<Content
+    items={fakeitems}
+    shoppingCart ={fakeshoppingCart}
+    fetchItemList={fakefetchItemList}
+    addToCart={addToCart}
+    updateCart={updateCart}
+  />);
   it('type of Content', () => {
     expect(wrapper.type()).to.equal('div');
   });
